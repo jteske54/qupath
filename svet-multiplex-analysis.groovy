@@ -1,3 +1,9 @@
+// Jacob Teske
+// 2023-03-28
+// Mayo Clinic
+// Drs. Harry Yoon and Mojun Zhu
+
+
 import qupath.ext.biop.cellpose.Cellpose2D
 
 def cellpose = Cellpose2D.builder("cyto") // Can choose "None" if you want to train from scratch
