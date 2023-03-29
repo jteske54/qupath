@@ -6,8 +6,8 @@
 
 import qupath.ext.biop.cellpose.Cellpose2D
 
-def cellpose = Cellpose2D.builder("cyto") // Can choose "None" if you want to train from scratch
-                .channels("DAPI", "CY3")  // or use work with .cellposeChannels( channel1, channel2 ) and follow the cellpose way
+def cellpose = Cellpose2D.builder("cyto2") // Can choose "None" if you want to train from scratch
+                .channels("NAK", "DAPI")  // or use work with .cellposeChannels( channel1, channel2 ) and follow the cellpose way
 //                .preprocess(ImageOps.Filters.gaussianBlur(1)) // Optional preprocessing QuPath Ops 
 //                .epochs(500)             // Optional: will default to 500
 //                .learningRate(0.2)       // Optional: Will default to 0.2
