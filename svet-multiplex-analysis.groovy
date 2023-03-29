@@ -1,22 +1,20 @@
 // Jacob Teske
 // 2023-03-28
-// Mayo Clinic
-// Drs. Harry Yoon and Mojun Zhu
 
 
 import qupath.ext.biop.cellpose.Cellpose2D
 
 def cellpose = Cellpose2D.builder("cyto2") // Can choose "None" if you want to train from scratch
                 .channels("NAK", "DAPI")  // or use work with .cellposeChannels( channel1, channel2 ) and follow the cellpose way
-//                .preprocess(ImageOps.Filters.gaussianBlur(1)) // Optional preprocessing QuPath Ops 
-//                .epochs(500)             // Optional: will default to 500
-//                .learningRate(0.2)       // Optional: Will default to 0.2
-//                .batchSize(8)            // Optional: Will default to 8
-//                .minTrainMasks(5)        // Optional: Will default to 5
-//                .addParameter("save_flows")      // Any parameter from cellpose not available in the builder. See https://cellpose.readthedocs.io/en/latest/command.html
-//                .addParameter("anisotropy", "3") // Any parameter from cellpose not available in the builder. See https://cellpose.readthedocs.io/en/latest/command.html
-//                .modelDirectory( new File("My/folder/for/models")) // Optional place to store resulting model. Will default to QuPath project root, and make a 'models' folder
-//                .saveBuilder("My Builder") // Optional: Will save a builder json file that can be reloaded with Cellpose2D.builder(File builderFile)
+                .preprocess(ImageOps.Filters.gaussianBlur(1)) // Optional preprocessing QuPath Ops 
+                .epochs(500)             // Optional: will default to 500
+                .learningRate(0.2)       // Optional: Will default to 0.2
+                .batchSize(8)            // Optional: Will default to 8
+                .minTrainMasks(5)        // Optional: Will default to 5
+                .addParameter("save_flows")      // Any parameter from cellpose not available in the builder. See https://cellpose.readthedocs.io/en/latest/command.html
+                .addParameter("anisotropy", "3") // Any parameter from cellpose not available in the builder. See https://cellpose.readthedocs.io/en/latest/command.html
+                .modelDirectory( new File("My/folder/for/models")) // Optional place to store resulting model. Will default to QuPath project root, and make a 1 folder
+                .saveBuilder("My Builder") // Optional: Will save a builder json file that can be reloaded with Cellpose2D.builder(File builderFile)
                 .build()
 
 // Once ready for training you can call the train() method
